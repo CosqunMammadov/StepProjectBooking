@@ -1,4 +1,4 @@
-package org.example.flight;
+package org.example.flightAndBooking;
 
 public class Flight {
 
