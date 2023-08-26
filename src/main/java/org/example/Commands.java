@@ -5,23 +5,23 @@ import org.example.controller.*;
 public class Commands {
 
     public void onlineBoard(){
-        OnlineBoard.onlineBoard();
+        OnlineBoardController.onlineBoard();
     }
 
     public void showFlight(){
-        FlightInfo.showFlight();
+        FlightInfoController.showFlight();
     }
 
     public void searchAndBook(){
-        SearchAndBook.searchAndBook();
+        SearchAndBookController.searchAndBook();
     }
 
     public void cancelBook(){
-        CancelBook.cancelBook();
+        CancelBookController.cancelBook();
     }
 
     public void myFlights(){
-        MyFlights.myFlights();
+        MyFlightsController.myFlights();
     }
 
 }

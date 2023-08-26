@@ -1,6 +1,6 @@
 package org.example.controller;
 
-public class CancelBook {
+public class CancelBookController {
 
     public static void cancelBook(){
 

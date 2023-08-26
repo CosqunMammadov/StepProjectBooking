@@ -1,6 +1,6 @@
 package org.example.controller;
 
-public class FlightInfo {
+public class FlightInfoController {
 
     public static void showFlight(){
 

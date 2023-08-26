@@ -1,6 +1,6 @@
 package org.example.controller;
 
-public class OnlineBoard {
+public class OnlineBoardController {
 
     public static void onlineBoard(){
 

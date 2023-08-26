@@ -1,6 +1,6 @@
 package org.example.controller;
 
-public class SearchAndBook {
+public class SearchAndBookController {
 
     public static void searchAndBook(){
 

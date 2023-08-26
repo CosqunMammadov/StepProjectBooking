@@ -1,6 +1,6 @@
 package org.example.controller;
 
-public class MyFlights {
+public class MyFlightsController {
 
     public static void myFlights(){
 
