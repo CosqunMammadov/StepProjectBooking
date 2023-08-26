@@ -9,19 +9,19 @@ public class Commands {
     }
 
     public void showFlight(){
-        FlightInfoController.showFlight();
+        FlightController.showFlight();
     }
 
     public void searchAndBook(){
-        SearchAndBookController.searchAndBook();
+        BookingController.searchAndBook();
     }
 
     public void cancelBook(){
-        CancelBookController.cancelBook();
+        BookingController.cancelBook();
     }
 
     public void myFlights(){
-        MyFlightsController.myFlights();
+        FlightController.myFlights();
     }
 
 }
