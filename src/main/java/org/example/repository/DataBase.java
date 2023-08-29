@@ -2,6 +2,7 @@ package org.example.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DataBase {
@@ -13,10 +14,22 @@ public class DataBase {
 
     }
 
-    public static Connection getConnection() throws SQLException, ClassNotFoundException {
-//        Class.forName("org.postgresql.Driver");
+    public static Connection getConnection()  {
         Connection connection = null;
-        connection = DriverManager.getConnection(url,user,password);
+        try {
+            connection = DriverManager.getConnection(url,user,password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return connection;
+    }
+
+    public static PreparedStatement getStatement(String sql) {
+        try {
+            return getConnection().prepareStatement(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }

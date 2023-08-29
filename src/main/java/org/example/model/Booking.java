@@ -1,4 +1,4 @@
-package org.example.flightAndBooking;
+package org.example.model;
 
 public class Booking {
     int id;
