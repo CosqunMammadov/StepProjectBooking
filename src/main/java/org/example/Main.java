@@ -9,10 +9,6 @@ import org.example.util.FileUtil;
 public class Main {
     public static void main(String[] args) {
         MenuController menuController = new MenuController();
-//        menuController.startApp();
-
-        FlightController flightController = new FlightController();
-        flightController.insertFlights();
-
+        menuController.startApp();
     }
 }
