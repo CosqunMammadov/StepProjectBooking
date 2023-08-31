@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.model.Flight;
 import org.example.service.BookingService;
 import org.example.service.FlightService;
+import org.example.service.UserService;
 import org.example.util.ScannerUtil;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Scanner;
 public class BookingController {
 
     ScannerUtil scannerUtil = new ScannerUtil();
+    Scanner scan = new Scanner(System.in);
     BookingService bookingService = new BookingService();
     FlightService flightService = new FlightService();
 
@@ -19,7 +21,9 @@ public class BookingController {
         List<Flight> flights = flightService.searchFlights(searchData.get(0), searchData.get(1));
         System.out.println(flights);
 
-        bookingService.getBookFlights(searchData.get(3), UserController.currentUserId, Integer.parseInt(searchData.get(2)));
+        System.out.println("Write flight number: ");
+        String flightNumber = scan.next();
+        bookingService.getBookFlights(flightNumber, UserService.currentUserId, Integer.parseInt(searchData.get(2)));
     }
 
     public void cancelTheBooking(){
@@ -29,6 +33,6 @@ public class BookingController {
     }
 
     public void myBookings(){
-        System.out.println(bookingService.getUserBookings(UserController.currentUserId));
+        System.out.println(bookingService.getUserBookings(UserService.currentUserId));
     }
 }

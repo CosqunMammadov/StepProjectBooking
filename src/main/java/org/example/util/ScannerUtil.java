@@ -33,12 +33,9 @@ public class ScannerUtil {
         String date = scan.nextLine();
         System.out.println("Write number of people: ");
         String numberOfPeople = scan.next();
-        System.out.println("Write flight number: ");
-        String flightNumber = scan.next();
         list.add(destination);
         list.add(date);
         list.add(numberOfPeople);
-        list.add(flightNumber);
         return list;
     }
 

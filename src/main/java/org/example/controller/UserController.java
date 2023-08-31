@@ -9,17 +9,8 @@ import java.util.Scanner;
 public class UserController {
     ScannerUtil scannerUtil = new ScannerUtil();
     UserService userService = new UserService();
-    public static int currentUserId;
 
     public void logIn(){
-
-        while (true) {
-            User loginInfo = scannerUtil.getLoginInfo();
-            User user = userService.getUser(loginInfo.getUsername(), loginInfo.getPassword());
-            if (user != null){
-                currentUserId = user.getId();
-                break;
-            }
-        }
+        userService.logIn();
     }
 }

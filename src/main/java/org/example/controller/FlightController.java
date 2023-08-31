@@ -20,8 +20,6 @@ public class FlightController {
         System.out.println("Write flight number: ");
         String flightNumber = scannerUtil.getString();
         Flight flight = flightService.getFlight(flightNumber);
-        if (flight != null)
-            System.out.println(flight);
-        else System.out.println("Flight number is not found");
+        System.out.println(flight);
     }
 }
