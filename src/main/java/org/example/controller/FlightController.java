@@ -13,7 +13,7 @@ public class FlightController {
     FlightService flightService = new FlightService();
     ScannerUtil scannerUtil = new ScannerUtil();
     public void insertFlights(){
-        flightService.insertFlights(FileUtil.readFile());
+        flightService.insertFlights(FileUtil.readFromFile());
     }
 
     public void onlineBoard(){
