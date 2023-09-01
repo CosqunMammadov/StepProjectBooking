@@ -1,19 +1,23 @@
-package org.example.controller;
+package org.example;
 
 import org.example.constants.Command;
+import org.example.controller.BookingController;
+import org.example.controller.FlightController;
+import org.example.controller.UserController;
 import org.example.util.ScannerUtil;
 
 import java.util.Arrays;
 
-public class MenuController {
+public class Menu implements Runnable{
+
     UserController userController = new UserController();
     ScannerUtil scannerUtil = new ScannerUtil();
-    OnlineBoardController onlineBoardController = new OnlineBoardController();
     FlightController flightController = new FlightController();
     BookingController bookingController = new BookingController();
 
-    public void startApp(){
-//        flightController.insertFlights();
+    @Override
+    public void run() {
+        flightController.insertFlights();
         boolean flag = true;
         while (flag) {
             userController.logIn();
@@ -21,7 +25,7 @@ public class MenuController {
                 showCommands();
                 String command = scannerUtil.getCommand();
                 if (command.equalsIgnoreCase("ONLINE_BOARD"))
-                    onlineBoardController.onlineBoard();
+                    flightController.onlineBoard();
                 else if (command.equalsIgnoreCase("SHOW_THE_FLIGHT_INFO"))
                     flightController.showTheFlightInfo();
                 else if (command.equalsIgnoreCase("SEARCH_AND_BOOK"))
@@ -39,6 +43,7 @@ public class MenuController {
             }
         }
     }
+
     private void showCommands() {
         System.out.println("Write one of the commands!");
         System.out.println("*************");
